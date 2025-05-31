@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossas Fotos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="hearts"></canvas>
+  
+  <div class="container">
+    <h1>Nossos Momentos</h1>
+    
+    <div class="carrossel">
+      <div class="carrossel-container">
+        <div class="carrossel-track">
+          <div class="carrossel-slide"><img src="images/foto1.jpg" alt="Momento 1"></div>
+          <div class="carrossel-slide"><img src="images/foto2.jpg" alt="Momento 2"></div>
+          <div class="carrossel-slide"><img src="images/foto3.jpg" alt="Momento 3"></div>
+           <div class="carrossel-slide"><img src="images/foto4.jpg" alt="Momento 4"></div>
+            <div class="carrossel-slide"><img src="images/foto5.jpg" alt="Momento 5"></div>
+          <!-- Adicione mais fotos conforme necessário -->
+        </div>
+        <button class="carrossel-btn prev">&#10094;</button>
+        <button class="carrossel-btn next">&#10095;</button>
+      </div>
+    </div>
+    
+    <div class="navegacao">
+      <a href="historia.html" class="btn-navegacao">Voltar</a>
+      <a href="poema.html" class="btn-navegacao">Próximo</a>
+    </div>
+  </div>
+
+  <script src="js/coracoes.js"></script>
+  <script src="js/carrossel.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Corações Caindo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #fce4ec;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>

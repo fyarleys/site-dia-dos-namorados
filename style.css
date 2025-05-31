@@ -1,0 +1,159 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f0;
+  color: #333;
+  text-align: center;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Container Principal */
+.container, .container-inicio, .container-poema {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #ff6b6b;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.btn-comecar, .btn-navegacao {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff6b6b;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-comecar:hover, .btn-navegacao:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+
+/* Navegação */
+.navegacao {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilos da História */
+.historia-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff9f9;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.historia-item h2 {
+  color: #ff6b6b;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Estilos do Carrossel */
+.carrossel {
+  margin: 2rem 0;
+}
+
+.carrossel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carrossel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-slide {
+  min-width: 100%;
+}
+
+.carrossel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 107, 107, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.carrossel-btn.prev {
+  left: 10px;
+}
+
+.carrossel-btn.next {
+  right: 10px;
+}
+
+.carrossel-btn:hover {
+  background-color: rgba(255, 107, 107, 1);
+}
+
+/* Estilos do Poema */
+.poema {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.verso {
+  margin: 0.5rem 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container, .container-inicio, .container-poema {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .carrossel-slide img {
+    height: 300px;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poema de Amor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="hearts"></canvas>
+  
+  <div class="container-poema">
+    <h1>Para Você ❤️</h1>
+    
+    <div class="poema">
+      <p class="verso">De tudo, ao meu amor serei atento</p>
+      <p class="verso">Antes, e com tal zelo, e sempre, e tanto</p>
+      <p class="verso">Que mesmo em face do maior encanto</p>
+      <p class="verso">Dele se encante mais meu pensamento</p>
+      <br>
+      <p class="verso">Quero vivê-lo em cada vão momento</p>
+      <p class="verso">E em seu louvor hei de espalhar meu canto</p>
+      <p class="verso">E rir meu riso e derramar meu pranto</p>
+      <p class="verso">Ao seu pesar ou seu contentamento</p>
+    </div>
+    
+    <div class="navegacao">
+      <a href="fotos.html" class="btn-navegacao">Voltar</a>
+      <a href="index.html" class="btn-navegacao">Finalizar</a>
+    </div>
+  </div>
+
+  <script src="js/coracoes.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Corações Caindo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #fce4ec;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
