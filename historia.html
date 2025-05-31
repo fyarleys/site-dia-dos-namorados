@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="hearts"></canvas>
+  
+  <div class="container">
+    <h1>Nossa História</h1>
+    
+    <div class="historia-item">
+      <h2>Primeiro Encontro</h2>
+      <p> Aquele dia naquela festa horrivel e naquele pessimo ambiente em que estavamos, vocé era a estrela da festa tão linda quanto as estrelas e eu só pensava se iria conseguir conquistá la.</p>
+    </div>
+    
+    <div class="historia-item">
+      <h2>Nosso Primeiro Beijo</h2>
+      <p>Nunca vou esquecer nosso primeiro beijo de verdade, naquela rua escura. Meu coração quase saiu pela boca!</p>
+    </div>
+    
+    <div class="historia-item">
+      <h2>Presente Especial</h2>
+      <p>O dia que você me deu aquele presente inesquecível. Ainda guardo sua cartinha e a fotinha com todo cuidado.</p>
+    </div>
+
+<div class="historia-item">
+      <h2>Momento Especial</h2>
+      <p>O dia que que eu percebi que estava apaixonado por você, não sabia que aquilo era amor mas só de pensar em ficar longe de você já me doia.</p>
+    </div>
+
+    <div class="navegacao">
+      <a href="index.html" class="btn-navegacao">Início</a>
+      <a href="fotos.html" class="btn-navegacao">Próximo</a>
+    </div>
+  </div>
+
+  <script src="js/coracoes.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Corações Caindo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #fce4ec;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Dia dos Namorados</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="hearts"></canvas>
+  
+  <div class="container-inicio">
+    <h1>Feliz Dia dos Namorados</h1>
+    <p>Para o amor da minha vida ❤️</p>
+    <a href="historia.html" class="btn-comecar">Começar</a>
+  </div>
+
+  <script src="js/coracoes.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Corações Caindo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #fce4ec;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
+<style>
+body{font-family:'Arial',sans-serif;margin:0;padding:0;background:#fff5f5}.header{background:linear-gradient(to right,#ff6b8b,#ff8e9e);color:white;padding:2rem;text-align:center}.heart{color:#ff3e3e}.container{max-width:1200px;margin:0 auto;padding:20px}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px}.gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;transition:transform 0.3s}.gallery img:hover{transform:scale(1.05)}@media(max-width:768px){.gallery{grid-template-columns:1fr 1fr}}@media(max-width:480px){.gallery{grid-template-columns:1fr}}
+</style>
